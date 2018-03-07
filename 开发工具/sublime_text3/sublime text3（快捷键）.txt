@@ -1,0 +1,12 @@
+﻿sublimetext  快捷键
+2018/3/7
+
+  Ctrl + Shift + P ------------------命令模式
+
+命令：
+
+sshtml模糊匹配-----语法切换到html模式，同理所得，ss+相应文件名匹配相应模式，如ssphp、ssjava等
+
+Alt + . ------------快速闭合标签
+
+alt +shift +number 多窗口

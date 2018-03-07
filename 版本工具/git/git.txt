@@ -1,0 +1,49 @@
+git add [filename]
+git add .
+
+git commit -m "description" 将暂存区的文件添加到版本库
+git commit -am "description" 将工作区的文件添加到版本库
+git commit -amend   撤销上一次提交并将暂存区文件重新提交
+
+git checkout -- [filename]  拉取暂存区文件，替换工作区文件
+git checkou -- . 撤销工作区所有文件的更改
+
+git reset head [filename]  拉取最近一次提交的版本库中的文件到暂存区，该操作不影响工作区
+git reset 版本号 [filename] 将选择的版本拉回到暂存区
+
+
+git rm --cached filename  删除暂存区的文件，不删除工作区中有修改的文件
+git rm -f filename 强行将暂存区和工作区的文件删除
+
+git mv  修改文件名
+
+//分支
+git branch  查看分支
+git branch [branchname] 创建分支名称
+git checkout [devname] 切换到分支名称
+git branch -d [devname] 删除分支
+git branch -m [srcdevname] [desdevname] 改变分支的名称
+git branch -b [devname] 创建分支并切换到该分支
+
+git merge [devname] 合并分支
+
+git diff  比较工作区和暂存区
+git diff --staged 比较暂存区和版本库之间的差异
+git diff 版本号 版本号 比较两个版本之间的差异
+git diff master dev  比较两个分支之间的差异
+
+
+git log
+
+git status
+
+git config --global user.name [用户名]
+git config --global user.email [邮箱地址]
+git list
+
+
+//连接github
+git init 初始化仓库
+git remote add origin git@github.com:shuguang123/shuguang.git  将本地项目与github项目关联。给远程github项目命名origin
+git pull origin master --allow-unrelated-histories  将远程项目和本地项目关联（不加后边的语句会报错）git 
+git push origin master 推送文件
