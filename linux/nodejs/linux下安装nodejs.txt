@@ -1,0 +1,38 @@
+1.官网下载相关版本
+
+ 英文网址：https://nodejs.org/en/download/
+
+ 中文网址：http://nodejs.cn/download/
+
+2.tar -zvxf node-v8.9.3-linux-x64.tar.xz 解压文件
+  mv node-v8.9.3-linux-x64 nodejs   给文件重命名，方便以后记忆
+
+3.ln -s /usr/local/app/nodejs/bin/npm /usr/local/bin/ 
+  ln -s /usr/local/app/nodejs/bin/node /usr/local/bin/ 
+  分别安装 node 和 npm 命令   建立软连接，设置为全局
+
+
+安装package
+
+npm install || -g rm  安装npm源管理器 可以切换资源
+
+安装后同时需要建立软连接
+ln -s /usr/local/app/nodejs/bin/nrm  /usr/local/bin/ 
+
+nrm ls  列出所有的源
+npm —- https://registry.npmjs.org/ 
+cnpm — http://r.cnpmjs.org/ 
+taobao - http://registry.npm.taobao.org/ 
+eu —– http://registry.npmjs.eu/ 
+au —– http://registry.npmjs.org.au/ 
+sl —– http://npm.strongloop.com/ 
+nj —– https://registry.nodejitsu.com/
+ 
+nrm test 测试时间
+npm ---- 91202ms
+    * cnpm --- 192ms
+      taobao - 90ms
+      nj ----- Fetch Error
+      rednpm - 117ms
+      npmMirror  13057ms
+      edunpm - Fetch Error
