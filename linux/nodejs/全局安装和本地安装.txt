@@ -1,0 +1,7 @@
+1.npm install express -g 或 npm install gulp --global
+  安装在Node安装目录下的node_modules文件夹中.
+  安装完成后，命令可以直接调用。
+
+2.npm install express 本地安装。
+  本地安装后可以直接通过require()的方式
+  引入项目中node_modules目录下的模块。
