@@ -1,0 +1,1 @@
+mvn install:install-file -Dfile=H:\maven\hc-express-1.1.3.jar -DgroupId=hc -DartifactId=hc-express -Dversion=1.1.3 -Dpackaging=jar
