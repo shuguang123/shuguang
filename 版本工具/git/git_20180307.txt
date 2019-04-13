@@ -1,36 +1,36 @@
 
-//ÍÆËÍ±¾µØÎÄ¼şµ½githup
+//æ¨é€æœ¬åœ°æ–‡ä»¶åˆ°githup
 
-1. ssh-keygen -t rsa -C "18271454167@163.com" Éú³É±¾µØssh ÃØÔ¿
+1. ssh-keygen -t rsa -C "18271454167@163.com" ç”Ÿæˆæœ¬åœ°ssh ç§˜é’¥
 
-2. ssh -T git@github.com ²âÊÔÊÇ·ñÁ¬½ÓÉÏgithup
+2. ssh -T git@github.com æµ‹è¯•æ˜¯å¦è¿æ¥ä¸Šgithup
 
-	³ÉÁ¬½ÓÌáÊ¾£ºHi shuguang123! You've successfully authenticated, 
+	æˆè¿æ¥æç¤ºï¼šHi shuguang123! You've successfully authenticated, 
 				but GitHub does not provide shell access.
 
 3. git config --global user.name "your name"
    git config --global user.email "your_email@youremail.com"  
    
-   ÉèÖÃusernameºÍuseremail¡£Ã¿´ÎÁ¬½Ógithup¶¼»á¼ÇÂ¼Ëü¡£
+   è®¾ç½®usernameå’Œuseremailã€‚æ¯æ¬¡è¿æ¥githupéƒ½ä¼šè®°å½•å®ƒã€‚
    
-4.git add  Ìí¼ÓÎÄ¼şµ½Ôİ´æÇø
-  git status ²é¿´ÎÄ¼ş×´Ì¬
-  git commit -m 'Ïà¹ØĞÅÏ¢' Ìí¼ÓÎÄ¼şµ½±¾µØ²Ö¿â
+4.git add  æ·»åŠ æ–‡ä»¶åˆ°æš‚å­˜åŒº
+  git status æŸ¥çœ‹æ–‡ä»¶çŠ¶æ€
+  git commit -m 'ç›¸å…³ä¿¡æ¯' æ·»åŠ æ–‡ä»¶åˆ°æœ¬åœ°ä»“åº“
 
-5. git remote add origin https://github.com/shuguang123/rpc.git(githupÉÏµÄ²Ö¿â)
-	±¾µØ²Ö¿âºÍÔ¶³Ìgithup¹ØÁª
-   git remote rm origin É¾³ı±¾µØ²Ö¿âºÍÔ¶³Ì²Ö¿âµÄ¹ØÁª
+5. git remote add origin git@github.com:shuguang123/shuguang.git(githupä¸Šçš„ä»“åº“)
+	æœ¬åœ°ä»“åº“å’Œè¿œç¨‹githupå…³è”
+   git remote rm origin åˆ é™¤æœ¬åœ°ä»“åº“å’Œè¿œç¨‹ä»“åº“çš„å…³è”
 
-6. git push origin master ÍÆËÍ±¾µØÎÄ¼şµ½Ô¶³Ì²Ö¿â
-   Èç¹û³öÏÖ±¨´íÇé¿ö£ºrror: failed to push some refs to 'https://github.com/shuguang123/rpc.git'
+6. git push origin master æ¨é€æœ¬åœ°æ–‡ä»¶åˆ°è¿œç¨‹ä»“åº“
+   å¦‚æœå‡ºç°æŠ¥é”™æƒ…å†µï¼šrror: failed to push some refs to 'https://github.com/shuguang123/rpc.git'
 					hint: Updates were rejected because the remote contains work that you do
 					hint: not have locally. This is usually caused by another repository pushing
 					hint: to the same ref. You may want to first integrate the remote changes
 					hint: (e.g., 'git pull ...') before pushing again.
 					hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 	
-	Ö÷ÒªÔ­Òò:githubÖĞµÄREADME.mdÎÄ¼ş²»ÔÚ±¾µØ´úÂëÄ¿Â¼ÖĞ
+	ä¸»è¦åŸå› :githubä¸­çš„README.mdæ–‡ä»¶ä¸åœ¨æœ¬åœ°ä»£ç ç›®å½•ä¸­
 	
-	git pull --rebase origin master  ½øĞĞ´úÂëºÏ²¢ pull = fetch +merge
+	git pull --rebase origin master  è¿›è¡Œä»£ç åˆå¹¶ pull = fetch +merge
 
 
