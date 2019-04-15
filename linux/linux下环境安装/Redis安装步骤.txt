@@ -1,0 +1,68 @@
+1.下载redis(可下载后上传)
+	wget  http://download.redis.io/releases/redis-5.0.4.tar.gz
+
+2.解压
+	tar -xzvf /home/aurora/下载/redis-5.0.4.tar.gz -C /usr/local/app/  
+	解压缩 /home/aurora/下载/redis-5.0.4.tar.gz 到 /usr/local/app/  下。
+
+3.编译
+	cd /usr/local/app/redis-5.0.4/  进入目录 /usr/local/app/redis-5.0.4/ 
+	make MALLOC=libc && make install PREFIX=/usr/local/app/redis  编译后redis 目录 /usr/local/app/redis
+
+4.修改redis配置文件
+	vim redis.conf 
+	设置端口，监听ip等等。
+
+5.运行redis
+	/usr/local/app/redis/bin/redis-server  /usr/local/app/ext/redis.conf
+	
+6.关闭redis
+	pkill redis  
+	根据名称关闭redis
+	kill -9 pid 
+	根据redis 进程号关闭redis。
+	redis-cli shutdown
+	使用 redis-cli 关闭
+
+7.搭建redis 5.0 版本 集群搭建
+	创建集群目录   mkdir /usr/local/app/redis-5.0.4/redis_cluster
+	cd redis_cluster
+	mkdir 7000 7001 7002 7003 7004 7005
+	将redis配置文件分别拷贝到目录下
+	cp redis.conf redis_cluster/7000
+	cp redis.conf redis_cluster/7001
+	cp redis.conf redis_cluster/7002
+	cp redis.conf redis_cluster/7003
+	cp redis.conf redis_cluster/7004
+	cp redis.conf redis_cluster/7005
+	
+	分别修改redis配置文件
+	daemonize yes
+	port 7000（分别对每个机器的端口号进行设置）
+	dir /usr/local/redis-cluster/8001/
+	cluster-enabled yes（启动集群模式）
+	cluster-config-file nodes-7000.conf（集群节点信息文件，这里800x最好和port对应上）
+	cluster-node-timeout 5000
+	bind 127.0.0.1（去掉bind绑定访问ip信息）
+	protected-mode no （关闭保护模式）
+	appendonly yes
+	
+	如果要设置密码需要增加如下配置：
+	requirepass xxx (设置redis访问密码)
+	masterauth xxx (设置集群节点间访问密码，跟上面一致)
+	
+	启动redis
+	/usr/local/redis/redis-5.0.2/src/redis-server /usr/local/redis-cluster/7000/redis.conf
+		
+	ps -ef | grep redis 查看是否启动成功
+	
+	用redis-cli创建整个redis集群
+	/usr/local/redis/redis-5.0.2/src/redis-cli -a xxx --cluster create --cluster-replicas 1 192.168.5.100:8001 192.168.5.100:8002 192.168.5.100:8003 192.168.5.100:8004 192.168.5.100:8005 192.168.5.100:8006
+	
+	连接任意一个客户端查看
+	./redis-cli -c -a xxx -h 192.168.5.100 -p 8001  -a访问服务端密码，-c表示集群模式，指定ip地址和端口号
+	
+	逐个关闭集群
+	/usr/local/redis/src/redis-cli -a xxx -c -h 192.168.0.60 -p 8001 shutdown
+	
+	

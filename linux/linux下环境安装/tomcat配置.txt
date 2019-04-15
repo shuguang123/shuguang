@@ -1,0 +1,11 @@
+1.下载tomcat
+	 wget http://mirrors.shu.edu.cn/apache/tomcat/tomcat-9/v9.0.17/bin/apache-tomcat-9.0.17.tar.gz
+	 
+2.解压缩到指定目录
+	tar -zvxf apache-tomcat-9.0.17.tar.gz -C /usr/local/java/
+3.启动
+
+4.开放 ip 端口
+	可以关闭 防火墙   service iptables stop
+	也可以添加规则    iptables -A INPUT -p tcp --dport 22 -j ACCEPT            centos6
+		systemctl stop  firewalld  关闭防护墙  centos7
