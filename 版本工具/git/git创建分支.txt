@@ -1,0 +1,36 @@
+1.进入本地git目录
+
+2.和远程仓库建立关联.
+	git remote add orgin remote_url
+
+3.查看分支
+	git branch -a(查看所有分支包括本地分支和远程分支)	
+	 git branch -r(查看远程分支)
+4. 本地创建新的分支切换到分支
+	git checkout -b branchname(直接新建一个分支然后切换至新创建的分	支).就是创建加切换分支.
+
+    
+	等价于命令：git branch branchname+git checkout branchname.
+
+   
+ 	git checkout branchname(是切换分支名).
+
+5. 将新分支推送至GitHub.
+	git push origin branchname
+
+6.查看Git命令方式创建分支的结果. 
+	git branch -r
+	
+7.合并分支
+	git checkout master  切换到master 分支下
+	git pull origin master  将远程仓库中的内容和本地分支中的内容进行合并
+	git merge dev  将dev分支合并到master上
+	git status 查看分支中内容提交的状态
+	git push origin master  把修改的内容提交到主分支上
+	git reset --hard HEAD  合并后的内容有问题，可以通过撤销合并恢复到以前状态
+	git reset --hard ORIG_HEAD 代码已经提交，撤销的方法是
+	
+8.删除远程分支和本地分支的
+	git branch -d dev  删除本地 dev分支
+	git push origin :dev  删除远程dev 分支
+	
