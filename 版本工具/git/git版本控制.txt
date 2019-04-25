@@ -1,0 +1,17 @@
+git commmit 的撤销
+	1.git reset --hard  head       回退到指定的版本(工作区，暂存区都回退)		修改head 指针到当前版本
+	2.git reset --mixed head       回退到指定的版本(工作区不回退，暂存区回退)	修改head 指针到当前版本
+	3.git reset --soft  head       回退到指定的版本(工作区不回退，暂存区不回退) 修改head 指针到当前版本
+	
+
+git log --graph –-decorate –-oneline –-simplify-by-decoration –-all
+
+git log --oneline  查看提交日志
+ 
+git add 的撤销
+	git checkout -- aa.txt 还原暂存的内容 到工作区
+	git checkout 版本号 -- aa.txt  还原指定版本号的内容到工作区
+	git checkout 分支名称 -- readme.txt  还原指定分支的文件内容到当前分支的工作区
+
+git merge
+  
